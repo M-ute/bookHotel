@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
-import {  BiMessageSquareDetail } from 'react-icons/bi'
+import {  BiMessageSquareDetail, BiSolidMessageDetail } from 'react-icons/bi'
 import { BsFillSendFill,  BsTelephoneOutboundFill } from 'react-icons/bs'
 
 const Footer = () => {
   return (
     <footer className='mt-15'>
-        <div className="container mx-auto px-4">
+        <div  className="container mx-auto px-4">
             <Link href="/" className="font-black text-tertiary-dark" >
                 Hotel Booking App
             </Link>
@@ -27,7 +27,7 @@ const Footer = () => {
                     </div>
 
                      <div className="flex items-center pt -4">
-                        <BiMessageSquareDetail />
+                        <BiSolidMessageDetail/>
                         <p className="ml-2">HUB64</p>
                     </div>
                 </div>
@@ -42,9 +42,15 @@ const Footer = () => {
 
                 <div className="flex-1 md:text-right"> 
                     <div className="pb-4">Dining Experience</div>
+                    <div className="pb-4">Wellness</div>
+                    <div className="pb-4">Fitness</div>
+                    <div className="pb-4">Sport</div>
+                    <p>Events</p>
                 </div>
             </div>
         </div>
+
+        <div className="bg-tertiary-light h-10 md:h-17.5 mt-16 w-full bottom-0 left-0"></div>
     </footer>
   )
 }
