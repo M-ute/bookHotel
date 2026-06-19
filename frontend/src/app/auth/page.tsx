@@ -1,7 +1,7 @@
 "use client"
 
 import { AiFillApple,  AiFillGoogleCircle } from "react-icons/ai";
-import { useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent, FormEvent } from "react";
 
 const defaultFormData = {
     name: "",
@@ -22,7 +22,20 @@ const Auth = () => {
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         const {name, value} = event.target;
         setFormData({ ...formData, [name]: value})
-    }
+    };
+
+    {/*Submit button handler */}
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        try {
+            console.log(formData);
+        } catch (error) {
+            console.log(error);
+        }finally {
+            setFormData(defaultFormData);
+        }
+    };
 
 
   return (
@@ -41,11 +54,11 @@ const Auth = () => {
             </div>
 
             {/*Form for Account Login*/}
-            <form className="space-y-4 md:space-y-6">
+            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                  <input 
                 type="text"
                 name="name"
-                placeholder="John Doe "
+                placeholder="John Doe"
                 required
                 className={inputStyles}
                 value={formData.name}
